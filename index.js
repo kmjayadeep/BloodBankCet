@@ -1,15 +1,25 @@
 var express = require('express');
 var path = require('path');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
 var routes = require('./routes/index');
+var register = require('./routes/register');
+var login = require('./routes/login');
 
 var app = express();
+var PORT = process.env.PORT ||3000;
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'Views'));
-
 app.use(express.static(path.join(__dirname,'Public')));
+app.use(bodyParser.urlencoded({
+	extended:true
+}));
+app.use(logger('dev'));
 
 app.use('/',routes);
+app.use('/register',register);
+app.use('/login',login);
 
 app.use(function(err,req,res,next){
 	var err = new Error('Not found');
@@ -35,4 +45,6 @@ app.use(function(err,req,res,next){
 	});
 });
 
+app.listen(PORT);
+console.log('Server listening at '+PORT);
 module.exports = app;
