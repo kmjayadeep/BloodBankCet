@@ -38,6 +38,7 @@ p {
     bottom: 0;
     font-size: 18px;
     left: 16px;
+    color: #CC2F2F;
     position: absolute;
 }
 
@@ -60,12 +61,17 @@ p {
     content: "\f2ca";
 }
 
+.menu .icon{
+    font-size: 1.5em;
+    padding-right: 2.5vw;
+    padding-left: 2.5vw;
+}
 
 /* Login
 ==================================*/
 .app-icon {
-    background-color: #fff;
-    background: url('../img/crown.jpg') center;
+    background: url('../img/drop.png') center;
+    background-color: #5F5F5F;
     background-size: cover;
     border-radius: 50%;
     height: 125px;
@@ -76,4 +82,17 @@ p {
 .social-login {
     position: fixed;
     bottom: 0;
+}
+
+/*Dashboard
+===================================*/
+.card h3 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    padding-left: 4vw;
+    padding-top: 1vh;
+}
+
+.history, .status, .profile {
+    margin-bottom: 5vh;
 }

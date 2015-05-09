@@ -121,8 +121,23 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         }
     })
+
+    .state('app.dashboard', {
+        url: '/dashboard',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/dashboard/dashboard.html',
+                controller: 'DashboardCtrl'
+            },
+            'fabContent': {
+                template: '<button id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
+                controller: function ($timeout) {
+                }
+            }
+        }
+    })
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/login');
+    $urlRouterProvider.otherwise('/app/dashboard'); 0
 });
