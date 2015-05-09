@@ -2,6 +2,70 @@
     <ion-content ng-class="{expanded:isExpanded}">
         <div class="content has-header">
             <div class="list animate-fade-slide-in-right">
+                <div class="card">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Name</span>
+                    <input type="text" ng-model="donorName" placeholder="Name">
+                </label>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Blood Group
+                    </div>
+                    <select>
+                        <option selected="" value="A+ve">A+ve</option>
+                        <option value="A-ve">A-ve</option>
+                        <option value="B+ve">B+ve</option>
+                        <option value="B-ve">B-ve</option>
+                        <option value="O+ve">O+ve</option>
+                        <option value="O-ve">O-ve</option>
+                        <option value="AB+ve">AB+ve</option>
+                        <option value="AB-ve">AB-ve</option>
+                    </select>
+                </label>
+                </br>
+                <label class="item item-radio" style="width:50%;float:left;">
+                    <input type="radio" name="group" value="on">
+                    <div class="item-content">
+                        Male
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" style="width:50%;float:right;">
+                    <input type="radio" name="group" value="on">
+                    <div class="item-content">
+                        Female
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                </br>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Year of Joining</span>
+                    <input type="number" ng-model="donorYear" placeholder="Year of Joining">
+                </label>
+                </br>
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Branch
+                    </div>
+                    <select>
+                    <option value="Applied Electronics">Applied Electronics and Instrumentation</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Computer Applications">Computer Applications</option>
+                    <option value="Computer science">Computer science and Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Electronics And Communication">Electronics And Communication Engineering</option>
+                    <option value="Industrial Engineering">Industrial Engineering</option>
+                    <option selected="" value="Mechanical Engineering">Mechanical Engineering</option>
+                    </select>
+                </label>
+                </br>
+                
+                <button class="item button button-block button-calm ink activated" data-ink-color="#9DEAFF" data-ink-opacity="1">
+                    Submit
+                </button>
+                </div>
             </div>
         </div>
     </ion-content>

@@ -132,6 +132,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             'fabContent': {
                 template: '<button id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
                 controller: function ($timeout) {
+/*                    $timeout(function () {
+                        document.getElementById('fab-profile').classList.toggle('on');
+                    }, 800);*/
                 }
             }
         }
