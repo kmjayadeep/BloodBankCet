@@ -198,13 +198,27 @@ angular.module('starter.controllers', [])
     ionic.material.ink.displayEffect();
 })
 
-.controller('RegisterCtrl', function($scope, $stateParams, $timeout) {
+.controller('RegisterCtrl', function($scope,$ionicPopup, $stateParams, $timeout) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
+
+    $scope.donor=[];
+    $scope.submit=function(){
+        if($scope.donor.male=="on"){
+            $scope.donor.sex="male"
+        }else if($scope.donor.female=="on"){
+            $scope.donor.sex="female"
+        }
+        var alertPopup = $ionicPopup.alert({
+            title: 'Donor',
+            template: ' ' + JSON.stringify($scope.donor)
+        });
+        console.log($scope.donor);
+    }
 
     // Set Motion
     $timeout(function() {

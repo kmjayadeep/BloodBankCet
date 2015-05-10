@@ -6,6 +6,10 @@ h1 {
     font-size: 42px;
 }
 
+.card{
+    padding: 5px;
+}
+
 
 /* Utilities
 ==================================*/
@@ -22,7 +26,6 @@ p {
 .scroll {
     height: 100%;
 }
-
 
 /* Menu
 ==================================*/
@@ -95,4 +98,15 @@ p {
 
 .history, .status, .profile {
     margin-bottom: 5vh;
+}
+
+/*Register
+===================================*/
+
+.button.item.button-block {
+    text-align: center;
+}
+
+.list .card .item.item-input {
+    margin-bottom: 1vh;
 }
