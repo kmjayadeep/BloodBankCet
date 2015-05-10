@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var validate = require('mongoose-validator');
 var dbHost = require('../variables').dbHost;
 var md5 = require('MD5');
 var db = mongoose.connection;
@@ -9,22 +10,50 @@ db.once('open', function(callback) {
     console.log('connected to ' + dbHost);
 });
 
+var nameValidator = validate({
+    validator: 'isLength',
+    arguments: [1, 20],
+    message: 'name should contain 1-20 characters'
+});
+
 var userSchema = mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+        validate: nameValidator
+    },
     year: Number,
     branch: String,
     batch: String,
     semester: Number,
-    sex: Boolean,
+    sex: {
+        type: String,
+        required: true
+    },
     bloodGroup: String,
     dob: String,
-    mobile: Number,
-    email: String,
-    password: String,
+    mobile: {
+        type:Number,
+        required:true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        default: '5f4dcc3b5aa765d61d8327deb882cf99'
+    },
     level: {
         type: Number,
         default: 0
     }
+});
+
+userSchema.index({
+    email: 1
+}, {
+    unique: true
 });
 
 userSchema.methods.checkEmailExist = function(callback) {
