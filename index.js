@@ -10,16 +10,16 @@ var app = express();
 var PORT = process.env.PORT ||3000;
 
 app.set('view engine','ejs');
-app.set('views',path.join(__dirname,'Views'));
-app.use(express.static(path.join(__dirname,'Public')));
+app.set('views',path.join(__dirname,'views'));
+app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({
 	extended:true
 }));
 app.use(logger('dev'));
 
-app.use('/',routes);
 app.use('/register',register);
 app.use('/login',login);
+app.use(routes);
 
 app.use(function(err,req,res,next){
 	var err = new Error('Not found');

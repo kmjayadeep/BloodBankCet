@@ -33,8 +33,8 @@ var userSchema = mongoose.Schema({
     bloodGroup: String,
     dob: String,
     mobile: {
-        type:Number,
-        required:true
+        type: Number,
+        required: true
     },
     email: {
         type: String,
@@ -55,6 +55,10 @@ userSchema.index({
 }, {
     unique: true
 });
+
+userSchema.statics.getAll = function(cb) {
+    return this.find({}, cb);
+}
 
 userSchema.methods.checkEmailExist = function(callback) {
     this.model('user').find({

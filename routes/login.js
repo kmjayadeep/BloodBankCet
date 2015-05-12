@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userModel = require('../Models/user');
+var userModel = require('../models/user');
 
 router.get('/', function(req, res) {
     res.send('Request method not allowed');

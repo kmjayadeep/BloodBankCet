@@ -1,18 +1,17 @@
 var express = require('express');
 var router = express.Router();
-var userModel = require('../Models/user');
+var userModel = require('../models/user');
 var md5 = require('MD5');
+var sizeof = require('object-sizeof');
 
-var response = {
-    code: Number,
-    message: String
-}
+var maxSize = 2500;
 
 router.get('/', function(req, res) {
     res.nd('Request method not allowed');
 });
 
 router.post('/', function(req, res) {
+
     u = new userModel({
         name: req.body.name,
         age: req.body.age,
@@ -27,31 +26,24 @@ router.post('/', function(req, res) {
         email: req.body.email,
         password: md5(req.body.password),
     });
-    u.checkEmailExist(function(err, flag) {
-        if (err)
-            res.send({
-                code: 2,
-                message: err
-            });
-        else if (flag)
-            res.send({
-                code: 1,
-                message: "Email already exists"
-            });
-        else
-            u.save(function(err, u) {
-                if (err)
-                    res.send({
-                        code: 2,
-                        message: err
-                    });
-                else
-                    res.send({
-                        code: 0,
-                        message: "success"
-                    });
-            });
-    });
+    if (sizeof(u) > maxSize)
+        res.send({
+            code: 3,
+            message: 'max input limit exceeded'
+        });
+    else
+        u.save(function(err, u) {
+            if (err)
+                res.send({
+                    code: 2,
+                    message: err
+                });
+            else
+                res.send({
+                    code: 0,
+                    message: "success"
+                });
+        });
 });
 
 module.exports = router;
