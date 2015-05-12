@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('bloodbankcet.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
     // Form data for the login modal
@@ -198,7 +198,7 @@ angular.module('starter.controllers', [])
     ionic.material.ink.displayEffect();
 })
 
-.controller('RegisterCtrl', function($scope,$ionicPopup, $stateParams, $timeout) {
+.controller('RegisterCtrl', function($scope, $ionicPopup, $stateParams, $timeout, register) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -206,18 +206,40 @@ angular.module('starter.controllers', [])
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
-    $scope.donor=[];
-    $scope.submit=function(){
-        if($scope.donor.male=="on"){
-            $scope.donor.sex="male"
-        }else if($scope.donor.female=="on"){
-            $scope.donor.sex="female"
+    $scope.donor = {};
+    $scope.submit = function() {
+        if ($scope.donor.male == "on") {
+            $scope.donor.sex = "m"
+        } else if ($scope.donor.female == "on") {
+            $scope.donor.sex = "f"
         }
-        var alertPopup = $ionicPopup.alert({
-            title: 'Donor',
-            template: ' ' + JSON.stringify($scope.donor)
-        });
-        console.log($scope.donor);
+        if ($scope.donor.Password != $scope.donor.ConfPassword) {
+            var alertPopup = $ionicPopup.alert({
+                title: 'Error',
+                template: 'Passwords doesn\'t match'
+            });
+        } else {
+            var sendData = {
+                name: $scope.donor.Name,
+                year: $scope.donor.Year,
+                branch: $scope.donor.branch,
+                sex: $scope.donor.sex,
+                bloodGroup: $scope.donor.bloodGroup,
+                dob: $scope.donor.DOB,
+                email: $scope.donor.Email,
+                password: $scope.donor.Password,
+                mobile: $scope.donor.Mobile
+            }
+
+            register.register(sendData)
+            .success(function(data){
+                console.log(data);
+            }).error(function(err){
+                console.log(err);
+            });
+
+        }
+
     }
 
     // Set Motion

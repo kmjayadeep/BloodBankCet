@@ -12,6 +12,8 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
 
+    console.log(req.body);
+
     u = new userModel({
         name: req.body.name,
         age: req.body.age,

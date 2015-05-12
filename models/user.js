@@ -29,7 +29,7 @@ var userSchema = mongoose.Schema({
     sex: {
         type: String,
         required: true
-    },
+    },  
     bloodGroup: String,
     dob: String,
     mobile: {
