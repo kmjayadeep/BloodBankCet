@@ -232,11 +232,11 @@ angular.module('bloodbankcet.controllers', [])
             }
 
             register.register(sendData)
-            .success(function(data){
-                console.log(data);
-            }).error(function(err){
-                console.log(err);
-            });
+                .success(function(data) {
+                    console.log(data);
+                }).error(function(err) {
+                    console.log(err);
+                });
 
         }
 

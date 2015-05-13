@@ -24,12 +24,10 @@ var userSchema = mongoose.Schema({
     },
     year: Number,
     branch: String,
-    batch: String,
-    semester: Number,
     sex: {
         type: String,
         required: true
-    },  
+    },
     bloodGroup: String,
     dob: String,
     mobile: {
@@ -44,6 +42,10 @@ var userSchema = mongoose.Schema({
         type: String,
         default: '5f4dcc3b5aa765d61d8327deb882cf99'
     },
+    college: {
+        type: String,
+        default: 'CET Tvm'
+    }
     level: {
         type: Number,
         default: 0
@@ -59,6 +61,23 @@ userSchema.index({
 userSchema.statics.getAll = function(cb) {
     return this.find({}, cb);
 }
+
+userSchema.statics.getByBloodGroup = function(bg, cb) {
+    return this.find({
+        bloodGroup: bg
+    }, cb);
+}
+userSchema.statics.getByBranch = function(br, cb) {
+    return this.find({
+        branch: br
+    }, cb);
+}
+userSchema.statics.getByCollege = function(clg, cb) {
+    return this.find({
+        college: clg
+    }, cb);
+}
+
 
 userSchema.methods.checkEmailExist = function(callback) {
     this.model('user').find({
@@ -89,7 +108,6 @@ userSchema.methods.checkLoginHash = function(callback) {
             callback(err, user);
     });
 }
-
 
 var user = mongoose.model('user', userSchema);
 module.exports = user;
