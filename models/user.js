@@ -45,11 +45,12 @@ var userSchema = mongoose.Schema({
     college: {
         type: String,
         default: 'CET Tvm'
-    }
+    },
     level: {
         type: Number,
         default: 0
-    }
+    },
+    lastSync: Date
 });
 
 userSchema.index({
@@ -67,17 +68,18 @@ userSchema.statics.getByBloodGroup = function(bg, cb) {
         bloodGroup: bg
     }, cb);
 }
+
 userSchema.statics.getByBranch = function(br, cb) {
     return this.find({
         branch: br
     }, cb);
 }
+
 userSchema.statics.getByCollege = function(clg, cb) {
     return this.find({
         college: clg
     }, cb);
 }
-
 
 userSchema.methods.checkEmailExist = function(callback) {
     this.model('user').find({
