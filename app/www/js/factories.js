@@ -20,20 +20,12 @@ angular.module('bloodbankcet.factories', [])
 .factory('register', function($http, appConfig) {
     return {
         register: function(sendData) {
-            console.log(sendData);
-
             return $http({
                 method: 'POST',
-                url: appConfig.serverUrl + '/register/', 
-                data : sendData,
-                'Content-Type': 'application/x-www-form-urlencoded ' 
+                url: appConfig.serverUrl + '/register/',
+                data: sendData,
+                'Content-Type': 'application/json'
             });
-
-           // return $http.post(appConfig.serverUrl + '/register', sendData);
         }
-        // getDashboardData: function() {
-        //     return $http.get('config/test-dashboard.json'); //
-        // }
     }
-
 })

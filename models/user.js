@@ -1,14 +1,6 @@
 var mongoose = require('mongoose');
 var validate = require('mongoose-validator');
-var dbHost = require('../variables').dbHost;
 var md5 = require('MD5');
-var db = mongoose.connection;
-mongoose.connect(dbHost);
-
-db.on('error', console.error.bind(console, 'connection error : '));
-db.once('open', function(callback) {
-    console.log('connected to ' + dbHost);
-});
 
 var nameValidator = validate({
     validator: 'isLength',

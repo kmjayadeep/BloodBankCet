@@ -5,6 +5,16 @@ var logger = require('morgan');
 var routes = require('./routes/index');
 var register = require('./routes/register');
 var login = require('./routes/login');
+var mongoose = require('mongoose');
+var config = require('./config').config;
+
+var db = mongoose.connection;
+mongoose.connect(config.dbHost);
+
+db.on('error', console.error.bind(console, 'connection error : '));
+db.once('open', function(callback) {
+    console.log('connected to ' + config.dbHost);
+});
 
 var app = express();
 var PORT = process.env.PORT ||3000;
@@ -15,6 +25,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.use(bodyParser.urlencoded({
 	extended:true
 }));
+app.use(bodyParser.json());
 app.use(logger('dev'));
 
 app.use(function(req, res, next) {

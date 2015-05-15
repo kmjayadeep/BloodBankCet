@@ -11,23 +11,8 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-
-    console.log(req.body);
-
-    u = new userModel({
-        name: req.body.name,
-        age: req.body.age,
-        year: req.body.year,
-        branch: req.body.branch,
-        batch: req.body.batch,
-        semester: req.body.semester,
-        sex: req.body.sex,
-        bloodGroup: req.body.bloodGroup,
-        dob: req.body.dob,
-        mobile: req.body.mobile,
-        email: req.body.email,
-        password: md5(req.body.password),
-    });
+    u = new userModel(req.body); //this works :)
+    u.password = md5(u.password)
     if (sizeof(u) > maxSize)
         res.send({
             code: 3,
