@@ -11,7 +11,8 @@ db.once('open', function(callback) {
 });
 
 //fields in this schema can be used to construct a regular expression to match target audience
-var notifSchema = mongoose.schema({
+//need to change to foreign key
+var notifSchema = mongoose.Schema({
     userFrom: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
@@ -21,10 +22,12 @@ var notifSchema = mongoose.schema({
         ref: 'user'
     },
     collegeTo: String,
-    BranchTo: String,
-    BloodGroup: String,
-    Message: String,
-    TimeStamp: Date
+    branchTo: String,
+    bloodGroup: String,
+    message: String,
+    timeStamp: Date,
+    expire: Date
 });
 
 var notif = mongoose.model('notif', notifSchema)
+module.exports = notif;
