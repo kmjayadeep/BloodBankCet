@@ -3,6 +3,7 @@ var router = express.Router();
 var userModel = require('../models/user');
 var notifModel = require('../models/notif');
 var sizeof = require('object-sizeof');
+var config = require('../config').config;
 
 var maxSize = 1500;
 
@@ -30,7 +31,6 @@ router.get('/view', function(req, res, next) {
 });
 
 router.post('/notif', function(req, res) {
-    console.log(req.body);
     n = new notifModel({
         userFrom: req.body.userFrom,
         userTo: req.body.userTo,
@@ -40,7 +40,7 @@ router.post('/notif', function(req, res) {
         message: req.body.message,
         timeStamp: new Date
     });
-    if (sizeof(n) > maxSize)
+    if (sizeof(req.body) > maxSize || n.message.length > 500)
         res.send({
             code: 3,
             message: 'max input limit exceeded'
@@ -58,6 +58,11 @@ router.post('/notif', function(req, res) {
                     message: "success"
                 });
         });
+});
+
+//send versioninfo. this will be compared to versioncode in the app and prompts update if necessary
+router.get('/version', function(req, res) {
+    res.send(config.versionDetails);
 });
 
 module.exports = router;
