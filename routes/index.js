@@ -3,7 +3,7 @@ var router = express.Router();
 var userModel = require('../models/user');
 var notifModel = require('../models/notif');
 var sizeof = require('object-sizeof');
-var config = require('../config').config;
+var config = require('../config').config[express().get('env')];
 
 var maxSize = 1500;
 
