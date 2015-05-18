@@ -173,7 +173,7 @@ angular.module('bloodbankcet.controllers', [])
 
 })
 
-.controller('DashboardCtrl', function($scope, $stateParams, $timeout) {
+.controller('DashboardCtrl', function($scope, $rootScope ,$stateParams, $timeout) {
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();
@@ -182,11 +182,11 @@ angular.module('bloodbankcet.controllers', [])
     $scope.$parent.setHeaderFab(false);
     $scope.showSearch=false;
 
-    $scope.showsearchform = function(){
+    $rootScope.showsearchform = function(){
         $scope.showSearch=true;
         console.log("searchform shown");
     }
-    $scope.hidesearchform = function(){
+    $rootScope.hidesearchform = function(){
         console.log("searchform hidden");
         $scope.showSearch=false;
     }
