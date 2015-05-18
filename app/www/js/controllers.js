@@ -281,7 +281,7 @@ angular.module('bloodbankcet.controllers', [])
     $scope.$parent.setHeaderFab(false);
 
     $scope.result={};
-    $http.getJSON('json/result.json')
+    $http.get('json/result.json')
         .success(function (data)
         {
             console.log(data);
