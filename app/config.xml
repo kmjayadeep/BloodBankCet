@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.sample374926" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>sample</name>
+  <name>Blood Bank</name>
   <description>
-        An Ionic Framework and Cordova project.
+        A Blood Bank app for colleges in kerala
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="moonblade168@gmail.com" href="http://moonblade.me">
+      MoonBlade
+    </author>
+  <author email="kmjayadeep@gmail.com" href="http://jayadeep.me">
+      Jayadeep
     </author>
   <content src="index.html"/>
   <access origin="*"/>

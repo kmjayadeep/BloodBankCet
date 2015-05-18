@@ -110,3 +110,13 @@ p {
 .list .card .item.item-input {
     margin-bottom: 1vh;
 }
+
+/*searchform
+===================================*/
+.searchcard {
+    position: absolute;
+    left:50%;
+    top: 50%;
+    width: 90vw;
+    transform: translate(-50%, -50%);
+}

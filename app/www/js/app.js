@@ -135,12 +135,14 @@ angular.module('bloodbankcet', ['ionic', 'bloodbankcet.controllers','bloodbankce
                 controller: 'DashboardCtrl'
             },
             'fabContent': {
-                template: '<button id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
-                controller: function ($timeout) {
-/*                    $timeout(function () {
-                        document.getElementById('fab-profile').classList.toggle('on');
-                    }, 800);*/
-                }
+                template: '<button ng-click="showsearchform()" id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
+                // template: '<button ng-if="!showsearch" ng-click="showsearchform()" id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
+                controller: 'DashboardCtrl'
+                //  function ($timeout) {
+                //     $timeout(function () {
+                //         document.getElementById('fab-profile').classList.toggle('on');
+                //     }, 800);
+                // }
             }
         }
     })
@@ -151,6 +153,19 @@ angular.module('bloodbankcet', ['ionic', 'bloodbankcet.controllers','bloodbankce
             'menuContent': {
                 templateUrl: 'templates/register.html',
                 controller: 'RegisterCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })
+
+    .state('app.search', {
+        url: '/search',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/search/searchform.html',
+                controller: 'SearchCtrl'
             },
             'fabContent': {
                 template: ''

@@ -1,4 +1,4 @@
-<ion-view view-title="Register">
+<ion-view view-title="Search">
     <ion-content ng-class="{expanded:isExpanded}">
         <div class="content has-header">
             <form name="registerForm">
@@ -7,7 +7,7 @@
                         <!-- Name -->
                         <label class="item item-input item-floating-label">
                             <span class="input-label">Name</span>
-                            <input type="text" ng-model="donor.Name" placeholder="Name">
+                            <input required type="text" ng-model="donor.Name" placeholder="Name">
                         </label>
                         <!-- Sex -->
                         <label class="item item-radio" style="width:50%;float:left;">
@@ -30,7 +30,7 @@
                             <div class="input-label">
                                 Blood Group
                             </div>
-                            <select ng-model="donor.bloodGroup">
+                            <select required ng-model="donor.bloodGroup">
                                 <option selected="" value="A+ve">A+ve</option>
                                 <option value="A-ve">A-ve</option>
                                 <option value="B+ve">B+ve</option>
@@ -67,12 +67,12 @@
                         <!-- Mobile -->
                         <label class="item item-input item-floating-label">
                             <span class="input-label">Mobile</span>
-                            <input type="number" ng-model="donor.Mobile" placeholder="Mobile">
+                            <input required type="number" ng-model="donor.Mobile" placeholder="Mobile">
                         </label>
                         <!-- Email -->
                         <label class="item item-input item-floating-label">
                             <span class="input-label">Email</span>
-                            <input type="email" ng-model="donor.Email" placeholder="Email">
+                            <input required type="email" ng-model="donor.Email" placeholder="Email">
                         </label>
                         <!-- Password -->
                         <label class="item item-input item-floating-label">
@@ -84,8 +84,12 @@
                             <span class="input-label">Confirm Password</span>
                             <input type="password" ng-model="donor.ConfPassword" placeholder="Confirm Password">
                         </label>
+                        <!-- Passwords don't match -->
+                        <label ng-if="donor.Password!=donor.ConfPassword" class="item item-input item-floating-label">
+                            Passwords don't match
+                        </label>
                         <!-- Year -->
-                        <label class="item item-input item-floating-label">
+                        <label class="item">
                             <span class="input-label">Year of Joining</span>
                             <input type="number" ng-model="donor.Year" placeholder="Year of Joining">
                         </label>
