@@ -274,42 +274,15 @@ angular.module('bloodbankcet.controllers', [])
     ionic.material.ink.displayEffect();
 })
 
-.controller('SearchCtrl', function($scope, $ionicPopup, $stateParams, $timeout, register) {
+.controller('SearchResultCtrl', function($scope, $ionicPopup, $stateParams, $timeout, register) {
     // Set Header
     $scope.$parent.clearFabs();
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
-    $scope.search = {};
-    $scope.searchSubmit = function() {
-            var sendData = {
-                year: $scope.search.Year,
-                branch: $scope.search.branch,
-                bloodGroup: $scope.search.bloodGroup,
-            }
+    $scope.result={};
 
-            register.register(sendData)
-                .success(function(data) {
-                    console.log(data);
-                }).error(function(err) {
-                    console.log(err);
-                });
 
-    }
-
-/*    // Set Motion
-    $timeout(function() {
-        ionic.material.motion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
-
-    $timeout(function() {
-        ionic.material.motion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
-*/
     // Set Ink
     ionic.material.ink.displayEffect();
 })

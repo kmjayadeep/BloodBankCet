@@ -160,12 +160,12 @@ angular.module('bloodbankcet', ['ionic', 'bloodbankcet.controllers','bloodbankce
         }
     })
 
-    .state('app.search', {
-        url: '/search',
+    .state('app.searchresult', {
+        url: '/searchresult',
         views: {
             'menuContent': {
-                templateUrl: 'templates/search/searchform.html',
-                controller: 'SearchCtrl'
+                templateUrl: 'templates/search/searchresult.html',
+                controller: 'SearchResultCtrl'
             },
             'fabContent': {
                 template: ''
