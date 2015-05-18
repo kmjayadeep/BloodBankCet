@@ -274,14 +274,19 @@ angular.module('bloodbankcet.controllers', [])
     ionic.material.ink.displayEffect();
 })
 
-.controller('SearchResultCtrl', function($scope, $ionicPopup, $stateParams, $timeout, register) {
+.controller('SearchResultCtrl', function($scope, $ionicPopup, $stateParams, $timeout,$http , register) {
     // Set Header
     $scope.$parent.clearFabs();
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
     $scope.result={};
-
+    $http.getJSON('json/result.json')
+        .success(function (data)
+        {
+            console.log(data);
+            $scope.result=data;
+        });
 
     // Set Ink
     ionic.material.ink.displayEffect();
