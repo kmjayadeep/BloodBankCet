@@ -2,13 +2,11 @@
     <ion-content ng-class="{expanded:isExpanded}">
         <div class="content has-header">
             <div class="list">
-                <div  ng-repeat="donor in result">
-                <div class="item item-avatar">
+                <a class="item item-avatar" ng-click="dummy()" ng-repeat="donor in result">
                     <img src="{{donor.src}}">
                     <h2>{{donor.name}}</h2>
                     <p>{{donor.mobile}}</p>
-                </div>
-                </div>
+                </a>
             </div>
         </div>
     </ion-content>

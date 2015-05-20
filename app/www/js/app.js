@@ -135,14 +135,8 @@ angular.module('bloodbankcet', ['ionic', 'bloodbankcet.controllers','bloodbankce
                 controller: 'DashboardCtrl'
             },
             'fabContent': {
-                template: '<button ng-click="showsearchform()" id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
-                // template: '<button ng-if="!showsearch" ng-click="showsearchform()" id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
+                template: '<button ng-if="!showSearch" ng-click="showsearchform()" id="fab-dashboard" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-android-search"></i></button>',
                 controller: 'DashboardCtrl'
-                //  function ($timeout) {
-                //     $timeout(function () {
-                //         document.getElementById('fab-profile').classList.toggle('on');
-                //     }, 800);
-                // }
             }
         }
     })

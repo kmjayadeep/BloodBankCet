@@ -1,9 +1,13 @@
 [{
     "name": "nisham",
-    "mobile" : 9456654,
+    "mobile" : "9456654",
     "src": "img/arya.jpg"
 }, {
+    "name": "test",
+    "mobile" : "6546654",
+    "src": "img/crown.jpg"
+}, {
     "name": "ham",
-    "mobile": 6654,
+    "mobile": "6654",
     "src": "img/arya.jpg"
 }]

@@ -280,6 +280,10 @@ angular.module('bloodbankcet.controllers', [])
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
 
+    $scope.dummy= function(){
+            console.log("show details");
+    }
+
     $scope.result={};
     $http.get('json/result.json')
         .success(function (data)
@@ -288,8 +292,14 @@ angular.module('bloodbankcet.controllers', [])
             $scope.result=data;
         });
 
+    $timeout(function() {
+        ionic.material.motion.fadeSlideInRight({
+            startVelocity: 3000
+        });
+    }, 700);
+
     // Set Ink
-    ionic.material.ink.displayEffect();
+    // ionic.material.ink.displayEffect();
 })
 
 ;
