@@ -1,0 +1,37 @@
+<div class="list card stable-bg vertical_center" id="searchDetails">
+    <!-- Name -->
+    <div class="item item-avatar">
+        <img src="img/{{details.bloodGroup}}.png">
+        <h2>{{details.name}}</h2>
+        <p ng-show="admin">{{details.mobile}}</p>
+        <p ng-show="!admin">{{details.contact}}</p>
+    </div>
+    <!-- body -->
+    <div class="item item-body">
+        <div class="">College : {{details.college}}</div>
+        <div class="">Branch  : {{details.branch}}</div>
+        <div class="">Email   : {{details.email}}</div>
+        <div class="">Year    : {{details.year}}</div>
+    </div>
+    <!-- Buttons -->
+    <div class="item tabs tabs-secondary tabs-icon-left">
+        <!-- Call -->
+        <a ng-show="admin" class="tab-item" ng-click="call(details.mobile)" data-ink-color="#336699" data-ink-opacity="0.5">
+            <i class="icon ion-ios-telephone"></i> Call
+        </a>
+        <a ng-show="!admin" class="tab-item" ng-click="call(details.contact)" data-ink-color="#336699" data-ink-opacity="0.5">
+            <i class="icon ion-ios-telephone"></i> Call
+        </a>
+        <!-- Message -->
+        <a ng-show="admin" class="tab-item" ng-click="message(details.mobile)" data-ink-color="#336699" data-ink-opacity="0.5">
+            <i class="icon ion-chatbox"></i> Message
+        </a>
+        <a ng-show="!admin" class="tab-item" ng-click="message(details.contact)" data-ink-color="#336699" data-ink-opacity="0.5">
+            <i class="icon ion-chatbox"></i> Message
+        </a>
+        <!-- Email -->
+        <a class="tab-item" ng-click="email(details.email)" data-ink-color="#336699" data-ink-opacity="0.5">
+            <i class="icon ion-email"></i> Email
+        </a>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<form name="searchForm" id="searchForm">
+    <div class="list card vertical_center">
+        <!-- <div class="card"> -->
+        <!-- Blood Group -->
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Blood Group
+            </div>
+            <select ng-model="search.bloodGroup">
+                <option selected="" value="A+ve">A+ve</option>
+                <option value="A-ve">A-ve</option>
+                <option value="B+ve">B+ve</option>
+                <option value="B-ve">B-ve</option>
+                <option value="O+ve">O+ve</option>
+                <option value="O-ve">O-ve</option>
+                <option value="AB+ve">AB+ve</option>
+                <option value="AB-ve">AB-ve</option>
+            </select>
+        </label>
+        <!-- Branch -->
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Branch
+            </div>
+            <select ng-model="search.branch">
+            	<option value="BArch">Architecture</option>
+                <option value="Btech AE">Btech Applied Electronics</option>
+                <option value="Btech CSE">Btech Computer science</option>
+              	<option value="Btech CE">Btech Civil</option>
+              	<option value="Btech EEE">Btech Electrical </option>
+                <option value="Btech EC">Btech Electronics And Communication </option>
+                <option value="Btech IE">Btech Industrial</option>
+                <option selected="" value="Mechanical Engineering">Btech Mechanical</option>
+                <option value="MBA">Business Administration</option>
+                <option value="MCA">Computer Applications</option>
+            </select>
+        </label>
+        <!-- Year -->
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Year
+            </div>
+            <select ng-model="search.year">
+                <option value="1">First Year</option>
+                <option value="2">Second Year</option>
+                <option value="3">Third Year</option>
+                <option value="4">Fourth Year</option>
+            </select>
+        </label>
+        <!-- Search -->
+        <div class="button-bar">
+            <button ng-click="searchSubmit()" ng-disabled="searchForm.$invalid" class="item button button-block button-calm ink activated" data-ink-color="#9DEAFF" data-ink-opacity="1">
+                Search
+            </button>
+        </div>
+        <!-- </div> -->
+    </div>
+</form>

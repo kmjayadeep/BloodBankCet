@@ -1,0 +1,26 @@
+<ion-view view-title="Profile">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+            <div class="list card stable-bg" ng-if="!profileExists">
+                <div class="item">
+                    <h3>No Profile Found</h3>
+                </div>
+            </div>
+            <div class="list card stable-bg" ng-if="profileExists" id="searchDetails">
+                <!-- Name -->
+                <div class="item item-avatar">
+                    <img src="img/{{profile.bloodGroup}}.png">
+                    <h2>{{profile.name}}</h2>
+                    <p>{{profile.mobile}}</p>
+                </div>
+                <!-- body -->
+                <div class="item-body">
+                    <div class="item">College : {{profile.college}}</div>
+                    <div class="item">Branch : {{profile.branch}}</div>
+                    <div class="item">Email : {{profile.email}}</div>
+                    <div class="item">Year : {{profile.year}}</div>
+                </div> 
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,104 @@
+<form name="registerForm">
+    <div class="list card">
+        <!-- <div class="card"> -->
+        <!-- Name -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Name</span>
+            <input required type="text" ng-model="donor.name" placeholder="Name">
+        </label>
+        <!-- Sex -->
+        <label class="item item-radio" style="width:50%;float:left;">
+            <input type="radio" name="group" value="on" ng-model="donor.male">
+            <div class="item-content">
+                Male
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+        <label class="item item-radio" style="width:50%;float:right;">
+            <input type="radio" name="group" value="on" ng-model="donor.female">
+            <div class="item-content">
+                Female
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+        </label>
+        <div style="clear:both"></div>
+        <!-- Blood Group -->
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Blood Group
+            </div>
+            <select required ng-model="donor.bloodGroup">
+                <option selected="" value="A+">A+ve</option>
+                <option value="A-">A-ve</option>
+                <option value="B+">B+ve</option>
+                <option value="B-">B-ve</option>
+                <option value="O+">O+ve</option>
+                <option value="O-">O-ve</option>
+                <option value="AB+">AB+ve</option>
+                <option value="AB-">AB-ve</option>
+            </select>
+        </label>
+        <!-- Branch -->
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Branch
+            </div>
+            <select ng-model="donor.branch">
+                <option value="Applied Electronics">Applied Electronics and Instrumentation</option>
+                <option value="Architecture">Architecture</option>
+                <option value="Business Administration">Business Administration</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Computer Applications">Computer Applications</option>
+                <option value="Computer science">Computer science and Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Electronics And Communication">Electronics And Communication Engineering</option>
+                <option value="Industrial Engineering">Industrial Engineering</option>
+                <option selected="" value="Mechanical Engineering">Mechanical Engineering</option>
+            </select>
+        </label>
+        <!-- DOB -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Date of Birth</span>
+            <input type="date" ng-model="donor.dob" placeholder="Date of Birth">
+        </label>
+        <!-- Mobile -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Mobile</span>
+            <input required type="number" ng-model="donor.mobile" placeholder="Mobile">
+        </label>
+        <!--Rep-->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Mobile</span>
+            <input required type="number" ng-model="donor.contact" placeholder="Contact of Rep">
+        </label>
+        <!-- Email -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Email</span>
+            <input required type="email" ng-model="donor.email" placeholder="Email">
+        </label>
+        <!-- Password -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="donor.password" placeholder="Password">
+        </label>
+        <!-- Confirm Password -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Confirm Password</span>
+            <input type="password" ng-model="donor.confPassword" placeholder="Confirm Password">
+        </label>
+        <!-- Passwords don't match -->
+        <label id="passwordmatch" ng-if="donor.password!=donor.confPassword" class="item item-input item-floating-label">
+            Passwords don't match
+        </label>
+        <!-- Year -->
+        <label class="item item-input item-floating-label">
+            <span class="input-label">Year of Joining</span>
+            <input type="number" ng-model="donor.year" placeholder="Year of Joining">
+        </label>
+        <!-- Submit -->
+        <button ng-click="submit()" ng-disabled="registerForm.$invalid" class="item button button-block button-calm ink activated" data-ink-color="#9DEAFF" data-ink-opacity="1">
+            Submit
+        </button>
+        <!-- </div> -->
+    </div>
+</form>

@@ -1,0 +1,182 @@
+/* General
+==================================*/
+
+h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 42px;
+}
+
+.card {
+    padding: 5px;
+}
+
+.vertical_center {
+    margin-top: 50% !important;
+}
+/* Utilities
+==================================*/
+
+.title-bordered {
+    border-top: solid 2px #bbb;
+    padding-top: 30px;
+}
+
+p {
+    color: #555;
+    margin: 0 0 25px;
+}
+
+.scroll {
+    height: 100%;
+}
+/* Menu
+==================================*/
+
+.menu .bar.bar-header.expanded {
+    transition: all .5s ease-in-out;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-color: #222;
+}
+
+.menu h2 {
+    bottom: 0;
+    font-size: 18px;
+    left: 16px;
+    color: #CC2F2F;
+    position: absolute;
+}
+
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+
+.menu .icon {
+    font-size: 1.5em;
+    padding-right: 2.5vw;
+    padding-left: 2.5vw;
+}
+/* Login
+==================================*/
+
+.app-icon {
+    background: url('../img/drop.png') center;
+    background-color: #5F5F5F;
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+.social-login {
+    position: fixed;
+    bottom: 0;
+}
+
+.logincard {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    /*width: 90vw;*/
+    /*transform: translate(-50%, -50%);*/
+}
+/*Dashboard
+===================================*/
+
+.card.status h3,
+.card.history h3,
+.card.profile h3 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    padding-left: 4vw;
+    padding-top: 1vh;
+}
+
+.history,
+.status,
+.profile {
+    margin-bottom: 5vh;
+}
+/*Register
+===================================*/
+
+.button.item.button-block {
+    text-align: center;
+}
+
+.list .card .item.item-input {
+    margin-bottom: 1vh;
+}
+
+#passwordmatch {
+    color: red;
+}
+/*searchform
+===================================*/
+
+#searchFormPopover {
+    width: auto;
+    top: 25%;
+}
+
+#searchFormPopover h1 {
+    color: ;
+}
+
+#searchFormPopover form {
+    margin: 2px;
+}
+
+#searchFormPopover ion-content {
+    position: relative !important;
+}
+
+#searchFormPopover ion-header-bar {
+    background: #838383 !important;
+    /*display: none;*/
+}
+/*searchresult
+===================================*/
+
+.list .item.item-avatar button {
+    /*top:50%;*/
+    /*transform: translate(0,-50%);*/
+}
+
+.det-bg {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    background-color: #CC2F2F;
+    background: radial-gradient(farthest-side at 60% 55%, rgb(255, 91, 91), #CC2F2F);
+    background: -o-radial-gradient(farthest-side at 60% 55%, rgb(255, 91, 91), #CC2F2F);
+    background: -moz-radial-gradient(farthest-side at 60% 55%, rgb(255, 91, 91), #CC2F2F);
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    text-shadow: 2px 2px rgba(0, 0, 0, .26);
+    display: block;
+    text-align: center;
+    padding-top: 15px;
+    color: white;
+    font-size: large;
+    margin: 0 auto;
+    width: 125px;
+}

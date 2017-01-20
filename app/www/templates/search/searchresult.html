@@ -1,0 +1,24 @@
+<ion-view view-title="Search">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+            <div class="list card">
+                <div class="item" ng-click="showSearchForm()" ng-if="noResult == '1'">
+                    <h3>No Results Found!</h3>
+                </div>
+            <div class="item" ng-click="showSearchForm()" ng-if="noResult == '2'">
+                <h3>Start a new Search</h3>
+            </div>
+            <a ng-click="" ng-if="noResult == '0'" ng-repeat="donor in result" class="item item-avatar item-button-right">
+                <!-- <img ng-click="showdetails($index)" src="img/{{donor.bloodGroup}}.png"> -->
+                <span class="avatar det-bg">{{donor.bloodGroup}}</span>
+                <h2 ng-click="showdetails($index)">{{donor.name}}</h2>
+                <p ng-show="admin" ng-click="showdetails($index)">{{donor.mobile}}</p>
+                <p ng-show="!admin" ng-click="showdetails($index)">{{donor.contact}}</p>
+<!--                 <button ng-click="call(donor.mobile)" class="button button-balanced ink">
+                    <i class="icon ion-ios-telephone"></i>
+                </button> -->
+            </a>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>

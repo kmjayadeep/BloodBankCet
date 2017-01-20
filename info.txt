@@ -1,0 +1,8 @@
+Error Codes
+--------------
+
+0  -> Success
+1  -> Wrong input
+2  -> Invalid Input
+3  -> Unknown Error
+4  -> Missing fields in input
